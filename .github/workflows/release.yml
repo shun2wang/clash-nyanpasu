@@ -9,13 +9,9 @@ env:
   RUST_BACKTRACE: short
 
 jobs:
-  release:
-    strategy:
-      matrix:
-          - os: ubuntu-latest
-            category: all
+      
 
-    runs-on: ${{ matrix.targets.os }}
+    runs-on: ubuntu-latest
     if: startsWith(github.repository, 'LibNyanpasu')
     steps:
       - name: Checkout repository
