@@ -10,7 +10,7 @@ env:
 
 jobs:
       
-
+ release:
     runs-on: ubuntu-latest
     if: startsWith(github.repository, 'LibNyanpasu')
     steps:
@@ -122,7 +122,7 @@ jobs:
           pnpm build --target aarch64-apple-darwin
           pnpm upload:osx-aarch64
 
-  release-update:
+ release-update:
     needs: release
     runs-on: ubuntu-latest
     if: |
