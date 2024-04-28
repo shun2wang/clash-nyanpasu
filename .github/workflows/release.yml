@@ -37,20 +37,20 @@ jobs:
           version: 8
           run_install: false
 
-      - name: Delete current release assets
-        uses: mknejp/delete-release-assets@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ github.event.release.tag_name }}
-          fail-if-no-assets: false
-          fail-if-no-release: false
-          assets: |
-            *.zip
-            *.gz
-            *.AppImage
-            *.deb
-            *.sig
-            *.json
+      # - name: Delete current release assets
+      #   uses: mknejp/delete-release-assets@v1
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     tag: ${{ github.event.release.tag_name }}
+      #     fail-if-no-assets: false
+      #     fail-if-no-release: false
+      #     assets: |
+      #       *.zip
+      #       *.gz
+      #       *.AppImage
+      #       *.deb
+      #       *.sig
+      #       *.json
 
       - name: Install Dependencies (Ubuntu Only)
         if: startsWith(matrix.targets.os, 'ubuntu-')
