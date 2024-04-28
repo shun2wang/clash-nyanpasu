@@ -77,7 +77,7 @@ jobs:
           # releaseDraft: false
           # prerelease: false
           tauriScript: pnpm tauri
-          args: -f default-meta -c ./backend/tauri/tauri.conf.json
+          # args: -f default-meta -c ./backend/tauri/tauri.conf.json
 
  release-update:
     needs: release
