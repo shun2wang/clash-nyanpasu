@@ -1,8 +1,8 @@
 name: Release Build
 
 on:
-  release:
-    types: [published]
+  push:
+  workflow_dispatch:
 
 env:
   CARGO_INCREMENTAL: 0
@@ -12,7 +12,6 @@ jobs:
   release:
     strategy:
       matrix:
-        targets:
           - os: ubuntu-latest
             category: all
 
